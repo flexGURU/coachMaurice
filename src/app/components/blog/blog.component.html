@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <span
-        class="px-4 py-1 bg-green-100 text-green-800 text-sm font-bold uppercase tracking-wider rounded-full"
+        class="px-4 py-1 bg-[#FFD700] text-green-800 text-sm font-bold uppercase tracking-wider rounded-full"
       >
         Latest Articles
       </span>
@@ -12,7 +12,7 @@
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Expert tips, nutrition advice, and success stories to keep you motivated
       </p>
-      <div class="w-20 h-1 bg-green-500 mx-auto mt-6"></div>
+      <div class="w-20 h-1 bg-[#FFD700] mx-auto mt-6"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -27,7 +27,7 @@
             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
           />
           <div
-            class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full"
+            class="absolute top-4 left-4 bg-[#FFD700] text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full"
           >
             {{ post.category }}
           </div>
@@ -41,7 +41,7 @@
           </div>
 
           <h3
-            class="font-bold text-xl text-gray-800 mb-3 group-hover:text-green-500 transition-colors duration-300"
+            class="font-bold text-xl text-gray-800 mb-3 group-hover:text-[#b8860b] transition-colors duration-300"
           >
             <a [href]="post.url" target="_blank">{{ post.title }}</a>
           </h3>
@@ -49,11 +49,9 @@
           <p class="text-gray-600 mb-6">{{ post.excerpt }}</p>
 
           <div class="flex items-center justify-between">
-         
-
             <a
               href="#"
-              class="flex items-center text-green-500 font-medium hover:text-green-600 transition-colors duration-300"
+              class="flex items-center text-[#b8860b] font-medium hover:text-green-600 transition-colors duration-300"
             >
               Read More
               <i class="fa fa-arrow-right ml-2"></i>

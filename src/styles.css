@@ -11,5 +11,5 @@ html {
 }
 
 .input:focus {
-  @apply outline-0 ring-2 ring-green-700;
+  @apply outline-0 ring-2 ring-[#FFD700];
 }
