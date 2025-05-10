@@ -1,0 +1,66 @@
+<section id="services" class="py-24 bg-gray-900 text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span
+        class="px-4 py-1 bg-green-500 text-white text-sm font-bold uppercase tracking-wider rounded-full"
+      >
+        My Services
+      </span>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mt-4 mb-4">
+        Elite Coaching Programs
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Comprehensive fitness solutions tailored to your unique goals
+      </p>
+      <div class="w-20 h-1 bg-green-500 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div
+        *ngFor="let service of services; let i = index"
+        class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-green-500 hover:transform hover:-translate-y-2 group"
+      >
+        <div class="p-8">
+          <div
+            class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-500/30 transition-colors duration-300"
+          >
+            <i [class]="service.icon"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">
+            {{ service.title }}
+          </h3>
+          <p class="text-gray-300 mb-6">{{ service.description }}</p>
+
+          <ul class="space-y-3 mb-8">
+            <li
+              *ngFor="let feature of service.features"
+              class="flex items-start"
+            >
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="text-gray-300">{{ feature }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 text-center">
+      <span
+        class="text-2xl font-semibold text-gray-700 hover:text0 transition duration-200"
+      >
+        Coach Maurice
+      </span>
+    </div>
+  </div>
+</section>

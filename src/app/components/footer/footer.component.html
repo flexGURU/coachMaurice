@@ -1,0 +1,91 @@
+<footer class="bg-black text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Elite Fitness Coach</h3>
+        <p class="text-gray-400 mb-6 leading-relaxed">
+          Transforming lives through personalized fitness coaching and nutrition
+          guidance. Join the elite 1% who achieve their fitness goals.
+        </p>
+        <div class="flex space-x-4">
+          <div *ngFor="let social of socials">
+            <a
+              target="_blank"
+              [href]="social.url"
+              class="bg-gray-800 p-2 rounded-full text-gray-400 hover:text-white hover:bg-green-500 transition-colors duration-300"
+            >
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+        <ul class="space-y-4">
+          <li>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-green-500 transition-colors duration-300 flex items-center"
+            >
+              <i [class]="icon + ' text-sm mr-2 text-green-500'"></i>
+              Home
+            </a>
+          </li>
+          <li *ngFor="let link of quickLinks">
+            <a
+              href="#{{ link.value }}"
+              class="text-gray-400 hover:text-green-500 transition-colors duration-300 flex items-center"
+            >
+              <i [class]="icon + ' text-sm mr-2 text-green-500'"></i>
+              {{ link.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="flex flex-col gap-6 justify-center items-center py-4 border border-slate-700 rounded-lg shadow-lg"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-center text-green-500 mt-6">
+            Fuel Your Fitness Journey
+          </h2>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-4xl text-green-700 animate-bounce">
+            <i class="fas fa-dumbbell"></i>
+          </div>
+
+          <div class="text-4xl text-red-500 animate-spin">
+            <i class="fas fa-apple-alt"></i>
+          </div>
+
+          <div
+            class="text-4xl text-pink-600 hover:scale-110 transition-transform duration-300"
+          >
+            <i class="fas fa-heartbeat"></i>
+          </div>
+
+          <div
+            class="text-4xl text-orange-500 hover:text-orange-700 transition-colors duration-300"
+          >
+            <i class="fas fa-carrot"></i>
+          </div>
+
+          <div
+            class="text-4xl text-blue-500 hover:rotate-12 transition-transform duration-300"
+          >
+            <i class="fas fa-running"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-12 pt-8 flex justify-center">
+      <p class="text-gray-400 text-sm">
+        © {{ currentYear }} Coach Maurice. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

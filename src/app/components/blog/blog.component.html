@@ -1,0 +1,66 @@
+<section id="blog" class="py-24 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span
+        class="px-4 py-1 bg-green-100 text-green-800 text-sm font-bold uppercase tracking-wider rounded-full"
+      >
+        Latest Articles
+      </span>
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-4">
+        Fitness Knowledge
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Expert tips, nutrition advice, and success stories to keep you motivated
+      </p>
+      <div class="w-20 h-1 bg-green-500 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div
+        *ngFor="let post of blogPosts"
+        class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+      >
+        <div class="relative overflow-hidden">
+          <img
+            [src]="post.image"
+            [alt]="post.title"
+            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div
+            class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full"
+          >
+            {{ post.category }}
+          </div>
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-center text-gray-500 text-sm mb-3">
+            <span>{{ post.date }}</span>
+            <span class="mx-2">•</span>
+            <span>{{ post.readTime }}</span>
+          </div>
+
+          <h3
+            class="font-bold text-xl text-gray-800 mb-3 group-hover:text-green-500 transition-colors duration-300"
+          >
+            <a [href]="post.url" target="_blank">{{ post.title }}</a>
+          </h3>
+
+          <p class="text-gray-600 mb-6">{{ post.excerpt }}</p>
+
+          <div class="flex items-center justify-between">
+         
+
+            <a
+              href="#"
+              class="flex items-center text-green-500 font-medium hover:text-green-600 transition-colors duration-300"
+            >
+              Read More
+              <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

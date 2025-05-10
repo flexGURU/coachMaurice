@@ -1,0 +1,94 @@
+<section id="portfolio" class="py-24 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span
+        class="px-4 py-1 bg-green-100 text-green-800 text-sm font-bold uppercase tracking-wider rounded-full"
+      >
+        Success Stories
+      </span>
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-4">
+        Real Transformations
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Real people who committed to the process and achieved extraordinary
+        results
+      </p>
+      <div class="w-20 h-1 bg-green-500 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div
+        *ngFor="let testimonial of testimonials; let i = index"
+        class="bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group"
+      >
+        <div class="relative">
+          <div class="flex">
+            <img [src]="testimonial.image" alt="" />
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+          >
+            <div class="p-4 w-full">
+              <p class="text-white text-sm">{{ testimonial.duration }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6">
+          <p class="text-gray-600 italic mb-4">"{{ testimonial.quote }}"</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 bg-white rounded-2xl p-10 shadow-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span
+            class="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full"
+          >
+            Client Success
+          </span>
+          <h3 class="text-3xl font-bold text-gray-900 mt-4 mb-4">
+            Your Transformation Awaits
+          </h3>
+          <p class="text-gray-600 mb-6">
+            These results aren't accidents. They're the product of a proven
+            system, dedication, and expert guidance. You could be the next
+            success story.
+          </p>
+          <button
+            class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition duration-300 shadow-lg shadow-green-500/20"
+          >
+            Start Your Transformation
+          </button>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <span class="text-4xl font-bold text-green-500 block mb-1"
+              >94%</span
+            >
+            <span class="text-gray-600 text-sm">Client Success Rate</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <span class="text-4xl font-bold text-green-500 block mb-1"
+              >30+</span
+            >
+            <span class="text-gray-600 text-sm">Days Average</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <span class="text-4xl font-bold text-green-500 block mb-1"
+              >15+</span
+            >
+            <span class="text-gray-600 text-sm">Lbs Average Loss</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <span class="text-4xl font-bold text-green-500 block mb-1"
+              >500+</span
+            >
+            <span class="text-gray-600 text-sm">Transformations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

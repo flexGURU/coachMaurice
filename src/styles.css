@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+body {
+  font-family: "Lexend", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.input {
+  @apply placeholder:text-slate-400 border border-slate-200 w-full px-4 py-3  rounded-2xl;
+}
+
+.input:focus {
+  @apply outline-0 ring-2 ring-green-700;
+}
