@@ -8,10 +8,11 @@ import { BlogComponent } from "./components/blog/blog.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { ReviewsComponent } from "./components/reviews/reviews.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { PricingComponent } from "./components/pricing/pricing.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeroComponent, ServicesComponent, AboutComponent, PortfolioComponent, BlogComponent, ContactComponent, ReviewsComponent, FooterComponent],
+  imports: [RouterOutlet, HeroComponent, ServicesComponent, AboutComponent, PortfolioComponent, BlogComponent, ContactComponent, ReviewsComponent, FooterComponent, PricingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
