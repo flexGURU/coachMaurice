@@ -22,6 +22,7 @@ export class EmailjsService {
           to_email: environment.emailjsconfig.emailAddress,
           user_email: contactDetails.value.from_name,
           phone: contactDetails.value.phone,
+          goal: contactDetails.value.goal,
         }
       );
 
