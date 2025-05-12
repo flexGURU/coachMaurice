@@ -68,7 +68,7 @@
                   <a
                     target="_blank"
                     [href]="social.platform"
-                    class="bg-white/10 p-3  rounded-full text-white hover:bg-white/30 transition-colors duration-300"
+                    class="bg-white/10 p-3 rounded-full text-white hover:bg-white/30 transition-colors duration-300"
                   >
                     <i [class]="social.icon + ' text-3xl text-slate-800  '"></i>
                   </a>
@@ -93,7 +93,7 @@
               <input
                 type="text"
                 id="name"
-                formControlName="name"
+                formControlName="from_name"
                 class="input"
                 placeholder="Your name"
               />
@@ -117,7 +117,7 @@
               <input
                 type="email"
                 id="email"
-                formControlName="email"
+                formControlName="from_email"
                 class="input"
                 placeholder="Your email"
               />
@@ -190,7 +190,6 @@
               [disabled]="contactForm.invalid"
               [class.opacity-50]="contactForm.invalid"
               class="w-full px-6 py-4 bg-[#FFD700] hover:bg-[#FFD700] text-slate-800 font-bold rounded-lg transition duration-300 shadow-lg shadow-[#FFD700]/20 cursor-pointer"
-
             >
               Book Your Free Consultation
             </button>

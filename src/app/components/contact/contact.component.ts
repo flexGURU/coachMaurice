@@ -6,6 +6,8 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { EmailjsService } from '../../services/emailjs.service';
 
 @Component({
   selector: 'app-contact',
@@ -38,17 +40,16 @@ export class ContactComponent {
     ],
   };
 
-  constructor() {
+  constructor(private emailjs: EmailjsService) {
     this.contactForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      from_name: new FormControl('', [Validators.required]),
+      from_email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl(''),
       goal: new FormControl(''),
       message: new FormControl('', [
         Validators.required,
         Validators.minLength(10),
       ]),
-      consent: new FormControl(false),
     });
   }
 
@@ -61,11 +62,8 @@ export class ContactComponent {
   ];
 
   onSubmit() {
-    if (this.contactForm.valid) {
-      console.log('Form submitted:', this.contactForm.value);
-      // Here you would typically send the form data to your backend
-      alert('Thank you for your message! We will get back to you soon.');
-      this.contactForm.reset();
-    }
+    console.log('details', this.contactForm.getRawValue());
+
+    this.emailjs.sendEmail(this.contactForm);
   }
 }

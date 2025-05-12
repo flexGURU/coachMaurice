@@ -1,3 +1,5 @@
+@import "ngx-toastr/toastr";
+
 @import "tailwindcss";
 body {
   font-family: "Lexend", sans-serif;
@@ -13,3 +15,10 @@ html {
 .input:focus {
   @apply outline-0 ring-2 ring-[#FFD700];
 }
+
+.alex-brush-regular {
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
