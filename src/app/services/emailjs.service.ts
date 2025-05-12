@@ -18,10 +18,10 @@ export class EmailjsService {
         {
           from_name: contactDetails.value.from_name,
           from_email: contactDetails.value.from_email,
-          subject: contactDetails.value.subject,
           message: contactDetails.value.message,
           to_email: environment.emailjsconfig.emailAddress,
           user_email: contactDetails.value.from_name,
+          phone: contactDetails.value.phone,
         }
       );
 

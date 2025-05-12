@@ -62,8 +62,6 @@ export class ContactComponent {
   ];
 
   onSubmit() {
-    console.log('details', this.contactForm.getRawValue());
-
     this.emailjs.sendEmail(this.contactForm);
   }
 }
