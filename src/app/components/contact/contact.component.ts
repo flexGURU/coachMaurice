@@ -54,7 +54,7 @@ export class ContactComponent {
   }
 
   goals = [
-    'Weight Loss',
+    'Fat Loss',
     'Muscle Gain',
     'Strength & Performance',
     'General Health',
