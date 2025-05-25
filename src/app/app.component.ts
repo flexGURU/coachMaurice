@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { PricingComponent } from './components/pricing/pricing.component';
     ReviewsComponent,
     FooterComponent,
     PricingComponent,
-  ],
+    NavbarComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
