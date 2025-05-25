@@ -1,7 +1,35 @@
+<div
+  *ngIf="showModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+  (click)="onModalBackdropClick($event)"
+>
+  <div class="relative max-w-4xl w-full mx-4">
+    <button
+      (click)="closeModal()"
+      class="absolute cursor-pointer -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+    >
+      <i class="fa-solid fa-circle-xmark text-3xl"></i>
+    </button>
+
+    <div class="bg-black rounded-lg overflow-hidden shadow-2xl">
+      <div *ngIf="showSpinner" class="flex items-center justify-center h-96">
+        <app-spinner></app-spinner>
+      </div>
+
+      <div *ngIf="showVideo" class="relative">
+        <app-video-intro
+          (videoLoaded)="onVideoLoaded()"
+          (videoEnded)="onVideoEnded()"
+        ></app-video-intro>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section
   class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black p-4 md:p-0"
+  [class.blur-sm]="showModal"
 >
-  <!-- Background Image with Overlay -->
   <div class="absolute inset-0 z-0">
     <img
       loading="eager"
@@ -15,7 +43,6 @@
     ></div>
   </div>
 
-  <!-- Content -->
   <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
     <div class="mb-6 inline-block">
       <span
@@ -25,7 +52,7 @@
       </span>
     </div>
     <h1
-      class="text-5xl sm:text-6xl md:text-[#b8860b]xl font-extrabold text-white mb-6 tracking-tight leading-tight"
+      class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight"
     >
       Transform Your <span class="text-[#FFD700]">Body</span>.<br />
       Transform Your <span class="text-[#FFD700]">Life</span>.
