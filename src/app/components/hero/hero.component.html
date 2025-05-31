@@ -1,118 +1,68 @@
-<div
-  *ngIf="showModal"
-  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-  (click)="onModalBackdropClick($event)"
->
-  <div class="relative max-w-4xl w-full mx-4">
-    <button
-      (click)="closeModal()"
-      class="absolute cursor-pointer -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
-    >
-      <i class="fa-solid fa-circle-xmark text-3xl"></i>
-    </button>
-
-    <div class="bg-black rounded-lg overflow-hidden shadow-2xl">
-      <div *ngIf="showSpinner" class="flex items-center justify-center h-96">
-        <app-spinner></app-spinner>
-      </div>
-
-      <div *ngIf="showVideo" class="relative">
-        <app-video-intro
-          (videoLoaded)="onVideoLoaded()"
-          (videoEnded)="onVideoEnded()"
-        ></app-video-intro>
-      </div>
-    </div>
-  </div>
-</div>
-
 <section
-  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black p-4 md:p-0"
-  [class.blur-sm]="showModal"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
 >
-  <div class="absolute inset-0 z-0">
-    <img
-      loading="eager"
-      [src]="img"
-      alt="Fitness Coach"
-      class="w-full h-full object-cover opacity-60"
-    />
+  <!-- Background -->
+  <div class="absolute inset-0 z-0 bg-black"></div>
 
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"
-    ></div>
-  </div>
-
-  <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-    <div class="mb-6 inline-block">
-      <span
-        class="px-4 py-1 bg-[#FFD700] text-slate-800 text-sm font-bold uppercase tracking-wider rounded-full"
-      >
-        Elite Fitness Coaching
-      </span>
-    </div>
-    <h1
-      class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight"
-    >
-      Transform Your <span class="text-[#FFD700]">Body</span>.<br />
-      Transform Your <span class="text-[#FFD700]">Life</span>.
-    </h1>
-    <p
-      class="text-xl sm:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light"
-    >
-      Join the elite 1% who achieve their fitness goals through science-backed
-      methods and dedicated coaching.
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-6 justify-center">
-      <a href="#pricing">
-        <button
-          class="cursor-pointer px-10 py-5 bg-[#FFD700] hover:bg-[#FFD700] text-slate-800 font-bold rounded-lg transition duration-300 transform hover:scale-105 text-lg shadow-lg shadow-[#FFD700]/30"
+  <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- Main Content Container -->
+    <div class="space-y-12">
+      <!-- Video Container -->
+      <div class="relative max-w-4xl mx-auto">
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900"
         >
-          Start Your Transformation
-        </button>
-      </a>
-      <a href="#contact">
-        <button
-          class="cursor-pointer px-10 py-5 bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold rounded-lg transition duration-300 text-lg"
-        >
-          Book a Free Consultation
-        </button>
-      </a>
-    </div>
-
-    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="flex flex-col items-center">
-        <span class="text-4xl font-bold text-[#FFD700] mb-2">100+</span>
-        <span class="text-white text-sm uppercase tracking-wider"
-          >Clients Transformed</span
-        >
+          <app-video-intro
+            (videoLoaded)="onVideoLoaded()"
+            (videoEnded)="onVideoEnded()"
+            class="w-full aspect-video"
+          ></app-video-intro>
+        </div>
       </div>
-      <div class="flex flex-col items-center">
-        <span class="text-4xl font-bold text-[#FFD700] mb-2">10+</span>
-        <span class="text-white text-sm uppercase tracking-wider"
-          >Years Experience</span
+
+      <!-- Minimal Text Content -->
+      <div class="space-y-8">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#FFD700] tracking-tight"
         >
-      </div>
-      <div class="flex flex-col items-center">
-        <span class="text-4xl font-bold text-[#FFD700] mb-2">95%</span>
-        <span class="text-white text-sm uppercase tracking-wider"
-          >Success Rate</span
-        >
-      </div>
-      <div class="flex flex-col items-center">
-        <span class="text-4xl font-bold text-[#FFD700] mb-2">5★</span>
-        <span class="text-white text-sm uppercase tracking-wider"
-          >Client Rating</span
-        >
+          Transform Your Body.
+        </h1>
+
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Science-backed coaching for serious results.
+        </p>
+
+        <!-- Single CTA -->
+        <div class="pt-4">
+          <a href="#contact">
+            <button
+              class="px-8 py-4 bg-[#FFD700] text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 text-lg"
+            >
+              Get Started
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Scroll Indicator -->
   <a
     href="#about"
     class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
   >
-    <i class="fas fa-arrow-down text-3xl text-white"></i>
+    <svg
+      class="w-6 h-6 text-white"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      ></path>
+    </svg>
   </a>
 </section>
